@@ -1,9 +1,12 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label } from 'reactstrap';
+import Button from "../UI/Button/Button";
+import Input from "../UI/Input/Input";
+import './InputForm.css'
 
-const Inputs = props => {
+const InputForm = props => {
     return (
-        <Form>
+        <Form className="form">
             <FormGroup>
                 <Label for="exampleText">Author</Label>
                 <Input type="text" name="text" id="exampleText"
@@ -20,9 +23,9 @@ const Inputs = props => {
                        onInput={props.changeMessage}
                 />
             </FormGroup>
-            <Button onSendClick={props.sendMessage}>Add Message</Button>
+            <Button onSendClick={props.sendMessage} label="Send">Add Message</Button>
         </Form>
     );
 };
 
-export default Inputs;
+export default InputForm;
