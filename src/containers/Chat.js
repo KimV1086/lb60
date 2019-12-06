@@ -4,6 +4,12 @@ import Form from "../components/Form/Inputs";
 
 class Chat extends Component {
 
+    state = {
+        author: '',
+        message: '',
+        messages: []
+    };
+
     render() {
         return (
             <Container>
