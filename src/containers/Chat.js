@@ -38,12 +38,12 @@ class Chat extends Component {
 
     getNewMessages = (lastDate) => {
         this.intervalId = setInterval(() => {
-            this.getAllMessages(lastDate)
+            this.getAllMessages(lastDate).then()
         }, 2000);
     };
 
     componentDidMount() {
-        this.getAllMessages();
+        this.getAllMessages().then();
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
