@@ -14,11 +14,11 @@ class Chat extends Component {
         messages: []
     };
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate= (nextProps, nextState) => {
         return nextState.messages.length !== this.state.messages.length ||
             nextState.author !== this.state.author ||
             nextState.message !== this.state.message;
-    }
+    };
 
     getAllMessages = (lastDate) => {
         let url = lastDate ? getMessagesByDate + lastDate : messagesUrl;
@@ -28,8 +28,7 @@ class Chat extends Component {
                 if (response.ok) {
                     return response.json();
                 }
-
-                throw new Error ('Error');
+                throw new Error('Error');
             }).then(newMessages => {
                 this.setState({messages: [...this.state.messages].concat(newMessages)});
             }).catch(error => {
